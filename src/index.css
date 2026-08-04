@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== FONTES ===== */
+  --font-titulo: "Space Grotesk", sans-serif;
+  /* uso: logo "DevStore", h1 do hero, h2/h3 dos cards e modal, texto dos chips de categoria */
+
+  --font-dados: "JetBrains Mono", monospace;
+  /* uso: preços (R$), campo de busca, badges de contador (carrinho/favoritos),
+     tags de categoria dentro do card, contador "10 produtos", textos tipo "carrinho_vazio()" */
+
+  --font-texto: "Inter", sans-serif;
+  /* uso: parágrafos, descrição do produto no modal, inputs do formulário de checkout */
+
+
+  /* ===== CORES — FUNDOS ===== */
+  --color-fundo-pagina: #0B231C;
+  /* uso: cor base do body, por trás do padrão de linhas (placa de circuito) */
+
+  --color-fundo-card: #123024;
+  /* uso: fundo padrão dos cards de produto, chips de categoria, drawer do carrinho, modal */
+
+  --color-fundo-card-hover: #173829;
+  /* uso: fundo do card quando o mouse passa por cima */
+
+  --color-fundo-card-hover-intenso: #1D4433;
+  /* uso: fundo do chip de categoria ativo/hover, fundo do ícone dentro do card (radial-gradient) */
+
+
+  /* ===== CORES — ACCENT (COBRE) ===== */
+  --color-cobre: #C97B3E;
+  /* uso: borda dos cards/inputs, ícones (stroke), botão "Adicionar", bolinhas dos cantos do card (solder pads) */
+
+  --color-cobre-claro: #E8A356;
+  /* uso: preço em destaque no hero e no modal, hover dos botões primários, estrelas de avaliação */
+
+  --color-linha-fundo: #C97B3E3B; /* ~22% opacidade */
+  /* uso: as linhas finas do padrão de fundo tipo trilha de PCB (repeating-linear-gradient) */
+
+
+  /* ===== CORES — TEXTO ===== */
+  --color-texto-principal: #ECE7DC;
+  /* uso: títulos dos produtos, texto principal em geral (cor "silkscreen" branca) */
+
+  --color-texto-secundario: #9FB0A8;
+  /* uso: descrição, placeholder dos inputs, labels em maiúsculo, texto de estado vazio */
+
+
+  /* ===== CORES — BORDAS E ESTADOS ===== */
+  --color-borda-padrao: #C97B3E59; /* ~35% opacidade */
+  /* uso: borda padrão de cards, header, drawer, chips, inputs do checkout */
+
+  --color-perigo-remover: #B4553F;
+  /* uso: botão "remover" no carrinho, coração de favorito quando ativo */
+
+  --color-sucesso-toast: #6FA287;
+  /* uso: ícone de check dentro do toast de "Pedido realizado com sucesso!" */
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font-texto);
+}
+
+
+.scroll-carrinho {
+  --cor-scroll: #b87333;
+  --fundo-scroll: transparent;
+}
+
+/* Navegadores atuais */
+@supports (scrollbar-width: auto) {
+  .scroll-carrinho {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-scroll) var(--fundo-scroll);
+  }
+}
+
+/* Chrome, Edge e Safari antigos */
+@supports selector(::-webkit-scrollbar) {
+  .scroll-carrinho::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .scroll-carrinho::-webkit-scrollbar-track {
+    background: var(--fundo-scroll);
+  }
+
+  .scroll-carrinho::-webkit-scrollbar-thumb {
+    background: var(--cor-scroll);
+    border-radius: 999px;
+  }
+
+  .scroll-carrinho::-webkit-scrollbar-thumb:hover {
+    background: #d3945a;
+  }
+}

@@ -1,0 +1,7 @@
+.fundo-pagina{
+    background-image:
+    repeating-linear-gradient(90deg, transparent 0 39px, rgb(201 123 62 / 0.22) 39px 40px),
+    repeating-linear-gradient(0deg, transparent 0 39px, rgb(201 123 62 / 0.22) 39px 40px);
+    background-color: var(--color-fundo-pagina);
+    background-size: 40px 40px;
+}
